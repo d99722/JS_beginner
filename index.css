@@ -1,13 +1,14 @@
 body {
   background-color: #ecf0f1;
+  color: white;
+}
+
+.js-clock .clock {
+  font-size: 75px;
 }
 
 .btn {
   cursor: pointer;
-}
-
-body {
-  color: white;
 }
 
 .clicked {
