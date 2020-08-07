@@ -1,11 +1,11 @@
 // You're gonna need this
 const NINE_HOURS_MILLISECONDS = 32400000;
 const clockContainer = document.querySelector(".js-clock");
-const clockTitle = clockContainer.querySelector("h2");
+const clockTitle = clockContainer.querySelector("h1");
 
 function getTime() {
   // Don't delete this.
-  const gonDay = new Date("2020-08-15:00:00:00+0900");
+  const gonDay = new Date("2020-08-15:07:00:00+0900");
   const date = new Date();
   const diffDate = new Date(gonDay - date);
 

@@ -5,4 +5,9 @@ body {
 .js-clock {
   border: black 3px solid;
   text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
 }
