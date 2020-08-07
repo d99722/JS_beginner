@@ -1,0 +1,8 @@
+body {
+  font-family: sans-serif;
+}
+
+.js-clock {
+  border: black 3px solid;
+  text-align: center;
+}
