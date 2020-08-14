@@ -1,23 +1,70 @@
-const btn = document.querySelector(".js-button"),
-  bar = document.querySelector("#js-bar"),
-  title = document.querySelector(".js-title"),
-  number = document.querySelector("#js-guessNum"),
-  info = document.querySelector("h3"),
-  result = document.querySelector(".js-result");
+const resetBtn = document.querySelector(".reset"),
+  result = document.querySelector(".result2"),
+  numbers = document.querySelectorAll(".num"),
+  operators = document.querySelectorAll(".operator"),
+  eqaul = document.querySelector(".equal");
 
-function handleBtn() {
-  let randomNumber = Math.floor(Math.random() * bar.value);
-  info.innerText = `You chose : ${number.value}, the Machine choose : ${randomNumber}`;
-  if (parseInt(number.value) === randomNumber) {
-    result.innerText = "🔥You won!🔥";
+let calArray = [];
+
+function handleReset() {
+  result.innerText = "0";
+  calArray = [];
+}
+
+function handleNumber() {
+  const target = parseInt(event.target.innerText);
+  const checker = calArray.length - 1;
+  if (calArray.length < 1 || isNaN(calArray[0])) {
+    calArray = [];
+    calArray.push(target);
+    result.innerText = calArray[0];
+  } else if (!isNaN(calArray[checker])) {
+    const newResult = calArray[checker] * 10 + target;
+    calArray[checker] = newResult;
+    result.innerText = calArray[checker];
   } else {
-    result.innerText = "😂You lost!😂";
+    result.innerText = target;
+    calArray.push(target);
   }
 }
 
-function handleInput() {
-  title.innerText = `Generate a number between 0 and ${bar.value - 1}`;
+function calculating() {
+  const op = calArray[1];
+  let newValue = null;
+  if (op === "+") {
+    newValue = calArray[0] + calArray[2];
+  } else if (op === "-") {
+    newValue = calArray[0] - calArray[2];
+  } else if (op === "*") {
+    newValue = calArray[0] * calArray[2];
+  } else if (op === "/") {
+    newValue = calArray[0] / calArray[2];
+  }
+  calArray = [];
+  calArray.push(newValue);
 }
 
-bar.addEventListener("input", handleInput);
-btn.addEventListener("click", handleBtn);
+function handleOp() {
+  const target = event.target.innerText;
+  if (calArray[1] == null) {
+    calArray.push(target);
+  } else if (isNaN(calArray[1])) {
+    calculating();
+    calArray.push(target);
+  }
+  result.innerText = calArray[0];
+}
+
+function handleEqual() {
+  calculating();
+  result.innerText = calArray[0];
+}
+
+for (const operator of operators) {
+  operator.addEventListener("click", handleOp);
+}
+for (const number of numbers) {
+  number.addEventListener("click", handleNumber);
+}
+resetBtn.addEventListener("click", handleReset);
+eqaul.addEventListener("click", handleEqual);
