@@ -1,7 +1,7 @@
 const toDoForm = document.querySelector(".js-toDoForm"),
   toDoInput = toDoForm.querySelector("input"),
   toDoList = document.querySelector(".js-pending"),
-  finList = document.querySelector(".js-finished"),
+  finList = document.querySelector(".js-finished");
 
 const PENDING = "pending";
 const FINISHED = "finished";
