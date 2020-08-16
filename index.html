@@ -7,19 +7,68 @@
   </head>
 
   <body>
-    <div class="js-clock">
-      <h1>00:00</h1>
+    <div class="ask-name">
+      <form class="js-form form">
+        <div>
+          <h3>What is your name?</h3>
+          <input
+            class="first-input"
+            type="text"
+            placeholder="Write your name here."
+          />
+          <div>
+            <p>Please allow location information!</p>
+            <p>&copy; 2020 Nomad Coders.</p>
+          </div>
+        </div>
+      </form>
     </div>
-    <form class="js-form form">
-      <input type="text" placeholder="what is your name?" />
-    </form>
-    <h4 class="js-greetings greetings"></h4>
-    <form class="js-toDoForm">
-      <input type="text" placeholder="Write a to do " />
-    </form>
-    <ul class="js-toDoList"></ul>
+    <div class="container">
+      <div class="outter-box things">
+        <div class="js-clock">
+          <h1>00:00</h1>
+        </div>
+        <div>
+          <h4 class="js-greetings greetings"></h4>
+        </div>
+        <span class="js-weather"></span>
+      </div>
+      <div class="date">
+        <h1 class="date-title">Good Day</h1>
+      </div>
+      <div class="outter-box toDoList">
+        <div class="input-task">
+          <h1>Tasks</h1>
+          <form class="js-toDoForm">
+            <input
+              class="js-toDoInput"
+              type="text"
+              placeholder="Write a to do "
+            />
+          </form>
+        </div>
+        <div class="output-task">
+          <div class="pending">
+            <h2>Pending</h2>
+            <ul class="js-pending"></ul>
+          </div>
+          <div class="finished">
+            <h2>Finished</h2>
+            <ul class="js-finished"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bigScreen">
+      <div class="bigScreen__text">Please make your screen BIG!</div>
+    </div>
+
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
+    <script src="bg.js"></script>
+    <script src="click.js"></script>
+    <script src="weather.js"></script>
   </body>
 </html>
