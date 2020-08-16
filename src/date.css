@@ -1,0 +1,11 @@
+.date {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.date-title {
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+}

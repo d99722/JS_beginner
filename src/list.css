@@ -1,0 +1,45 @@
+.input-task {
+  margin-bottom: 20px;
+  grid-row: 1;
+}
+
+.output-task {
+  grid-row: 2/6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.output-task h2 {
+  margin-bottom: 13px;
+}
+
+.pending {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.finished {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.finished ul {
+  color: #9c9ea1;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.first-input {
+  margin: 10px 0px 20px 0px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
