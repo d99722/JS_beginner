@@ -11,12 +11,13 @@
 .outter-box {
   padding: 50px;
   border-radius: 10px;
-  opacity: 0.95;
+  opacity: 0.8;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
     0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0);
+  transition: opacity 1s ease-in;
 }
 
-.outter-box:hover {
+.outter-box:focus {
   cursor: pointer;
   opacity: 1;
 }
